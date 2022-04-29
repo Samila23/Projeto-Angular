@@ -1,0 +1,31 @@
+<form [formGroup]="meuForm">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+
+  <!-- <app-mostrar-mensagem [controles]="meuForm.controls['email']" ></app-mostrar-mensagem> -->
+  <app-mostrar-mensagem
+  [controles]="meuForm.controls['email']"
+  [mensagem]="'Erro ao preencher email'"
+  ></app-mostrar-mensagem>
+  
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" formControlName="password" placeholder="Password">
+  </div>
+  <!-- <app-mostrar-mensagem [controles]="meuForm.controls['password']" ></app-mostrar-mensagem> -->
+  <app-mostrar-mensagem
+  [controles]="meuForm.controls['password']"
+  [mensagem]="'Erro ao preencher password'"
+  ></app-mostrar-mensagem>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <p>
+      Form: {{ meuForm.status }}
+  </p>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

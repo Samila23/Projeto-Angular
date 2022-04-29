@@ -1,0 +1,33 @@
+<div class="row float-end">
+  <button class="btn btn-success" routerLink="/professoresGp/criar"> Criar Professores GP+</button>
+</div>
+
+<table class="table">
+  <tr>
+      <th> ID </th>
+      <th> Nome </th>
+      <th> E-mail </th>
+      <th> Ações</th>
+  </tr>
+  <!-- criando um for para percorrer a  o vetor PROFESSORESGP  -->
+  <tr *ngFor="let p of professoresgp">
+    <td> {{ p.id }} </td>
+    <td> {{ p.nome }} </td>
+    <td> {{ p.email}} </td>
+    <td>
+      <button class="bnt border-0" [routerLink]="['/professoresGp/editar', p.id]">
+        <img class="img-thumbnail " src="https://img2.gratispng.com/20180218/wve/kisspng-pencil-black-and-white-drawing-clip-art-pencil-cliparts-white-5a8a024c5f38c7.2742284515189939963901.jpg" width="30" height="30">
+      </button>
+      <button class="bnt border-0" (click)="onDelete(p.id)">
+        <img class="img-thumbnail " src="https://prints.ultracoloringpages.com/2eaf9ad7ea5208ea3b4b785018248351.png" width="30" height="30">
+      </button>
+      <!-- <button class="btn btn-outline-info"[routerLink]="['/professoresGp/editar/', p.id]">Editar</button>
+      <button class="bnt border-0" [routerLink]="['/professoresGp/editar/', p.id]">
+        <img class="img-thumbnail " src="https://img2.gratispng.com/20180218/wve/kisspng-pencil-black-and-white-drawing-clip-art-pencil-cliparts-white-5a8a024c5f38c7.2742284515189939963901.jpg" width="30" height="30">
+      </button>
+      <button class="bnt border-0" (click)="onDelete(p.id)">
+        <img class="img-thumbnail " src="https://prints.ultracoloringpages.com/2eaf9ad7ea5208ea3b4b785018248351.png" width="30" height="30">
+      </button> -->
+    </td>
+  </tr>
+</table>

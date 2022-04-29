@@ -1,0 +1,29 @@
+<form [formGroup]="meuForm" (submit)="onSubmit()" >
+  <div class="row d-flex justify-content-center">
+      <div class="col-8">
+          <div class="form-group">
+              <label >Nome</label>
+              <input type="text" class="form-control" formControlName="nome" placeholder="Nome">
+          </div>
+          <app-mostrar-mensagem
+          [controles]="meuForm.controls['nome']"
+          [mensagem]="'Erro ao preencher nome'"
+          ></app-mostrar-mensagem>
+      </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+      <div class="col-8">
+          <div class="form-group">
+              <label >Email</label>
+              <input type="text" class="form-control" formControlName="email" placeholder="Email">
+          </div>
+          <app-mostrar-mensagem
+          [controles]="meuForm.controls['email']"
+          [mensagem]="'Erro ao preencher email'"
+          ></app-mostrar-mensagem>
+      </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary">Salvar</button>
+  </div>
+</form>

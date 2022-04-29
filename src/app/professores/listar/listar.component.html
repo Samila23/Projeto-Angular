@@ -1,0 +1,30 @@
+<p>listar works!</p>
+<p>Empresa Filho : {{empresaFilho}}</p>
+<!-- Criando uma tabela dinamica para mostrar os valores de vetor PROFESSORES -->
+<div class="row float-end">
+  <button class="btn btn-success" routerLink="/professores/criar"> Criar +</button>
+</div>
+
+<table class="table">
+  <tr>
+      <th> ID </th>
+      <th> Nome </th>
+      <th> Rua </th>
+      <th> n° </th>
+      <th> Cep </th>
+      <th> Ações</th>
+  </tr>
+  <!-- criando um for para percorrer a  o vetor PROFESSORES  -->
+  <tr *ngFor="let p of professores">
+    <td> {{ p.id }} </td>
+    <td> {{ p.nome }} </td>
+    <td> {{ p.rua}} </td>
+    <td> {{ p.numero}} </td>
+    <td> {{ p.cep}} </td>
+    <td>
+      <button class="btn btn-outline-info"[routerLink]="['/professores/editar', p.id]">Editar</button>
+      <button class="btn btn-outline-danger" (click)="onDelete(p.id!)">Deletar</button>
+    </td>
+  </tr>
+</table>
+

@@ -1,0 +1,63 @@
+<form [formGroup]="meuForm" (submit)="onSubmit()" >
+  <div class="row d-flex justify-content-center">
+      <div class="col-8">
+          <div class="form-group">
+              <label >Nome</label>
+              <input type="text" class="form-control" formControlName="nome" placeholder="Nome">
+          </div>
+
+          <app-mostrar-mensagem
+              [controles]="meuForm.controls['nome']"
+              [mensagem]="'Erro ao preencher nome'"
+          ></app-mostrar-mensagem>
+
+      </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+      <div class="col-8">
+          <div class="form-group">
+              <label >Rua</label>
+              <input type="text" class="form-control" formControlName="rua" placeholder="Rua">
+          </div>
+
+          <app-mostrar-mensagem
+              [controles]="meuForm.controls['rua']"
+              [mensagem]="'Erro ao preencher rua'"
+          ></app-mostrar-mensagem>
+      </div>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+      <div class="col-8">
+          <div class="form-group">
+              <label >Número</label>
+              <input type="text" class="form-control" formControlName="numero" placeholder="Número">
+          </div>
+
+          <app-mostrar-mensagem
+              [controles]="meuForm.controls['numero']"
+              [mensagem]="'Erro ao preencher número'"
+          ></app-mostrar-mensagem>
+
+      </div>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+      <div class="col-8">
+          <div class="form-group">
+              <label >CEP</label>
+              <input type="text" class="form-control" formControlName="cep" placeholder="CEP">
+          </div>
+
+          <app-mostrar-mensagem
+              [controles]="meuForm.controls['cep']"
+              [mensagem]="'Erro ao preencher CEP'"
+          ></app-mostrar-mensagem>
+      </div>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary">Salvar</button>
+  </div>
+
+</form>
